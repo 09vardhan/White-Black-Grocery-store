@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+    integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+  <link rel="stylesheet" href="/static/addcategory.css">
+</head>
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+{% for message in messages %}
+<center><b>{{ message }}</b></center>
+{% endfor %}
+{% endif %}
+{% endwith %}
+<style>
+  body {
+    background-color: #ffffff;
+    font-family: Arial, sans-serif;
+  }
+
+  .container {
+    margin-top: 50px;
+
+  }
+
+  .admin-product-form-container {
+    background-color: #fff;
+    background: url("static/background-magic-gycf.jpeg") no-repeat center center fixed;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .admin-product-form-container h1 {
+    margin-bottom: 30px;
+    color: #333;
+  }
+
+  .admin-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .admin-buttons a {
+    text-decoration: none;
+    color: #fff;
+  }
+
+  .admin-buttons .btn {
+    background-color: #007bff;
+    border-color: #007bff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+
+  .admin-buttons .btn:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+  }
+
+  .logo-container {
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .logo {
+    width: 500px;
+    height: auto;
+  }
+</style>
+
+<body>
+  <div class="logo-container">
+    <img src="static/large.png" alt="Logo" class="logo">
+  </div>
+
+  <div class="container">
+    <div class="admin-product-form-container">
+      <form method="POST" enctype="multipart/form-data">
+        <center>
+          <h1><b>Admin Dashboard</b></h1>
+        </center>
+        <div class="admin-buttons">
+          <button class="btn1"><a href="{{url_for('additems')}}">Add Products</a></button>
+          <button class="btn1"><a href="{{url_for('pstatus')}}">Products Status</a></button>
+          <button class="btn1"><a href="{{url_for('readcontact')}}">Customer Queries</a></button>
+          <button class="btn1"><a href="{{url_for('alogout')}}">Admin Logout</a></button>
+      </form>
+    </div>
+  </div>
+
+
+</body>
+
+</html>

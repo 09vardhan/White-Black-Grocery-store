@@ -1,0 +1,464 @@
+.navbar {
+    background-color: #f8f9fa;
+    /* Optional: Change background color of navbar */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.navbar-header,
+.navbar-nav {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-brand {
+    margin: 0 15px;
+}
+
+.navbar-nav {
+    flex: 1;
+    justify-content: center;
+}
+
+.navbar-nav>li {
+    float: none;
+    margin: 0 10px;
+}
+
+.navbar-nav>li>a {
+    text-align: center;
+    padding: 10px 15px;
+}
+
+/* Optional: Styling for the search form */
+.navbar-form .input-group {
+    width: 300px;
+    /* Adjust width as needed */
+}
+
+.navbar-form .form-control {
+    border-radius: 0;
+}
+
+.navbar-form .btn {
+    border-radius: 0;
+}
+
+.stylinglogo {
+    width: 255px;
+    height: auto;
+
+}
+
+#go {
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    border: none;
+}
+
+#go:hover {
+    color: #1c0574;
+}
+
+#go1 {
+    background-color: #1c0574;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    border: none;
+}
+
+#go1:hover {
+    background-color: gold;
+    color: #1c0574;
+}
+
+.bgimg {
+    background-image: url('');
+    background-size: cover;
+}
+
+.head1 {
+    font-size: 40px;
+    font-weight: bold;
+    color: rgb(244, 244, 242);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.paraline {
+    color: rgb(249, 249, 247);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 24px;
+}
+
+.buttonst {
+    color: gold;
+    background-color: #1c0574;
+    width: 230px;
+    height: 45px;
+    border: none;
+    border-radius: 8px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+.bgcolor {
+    background-color: #f9fbfe;
+}
+
+.head2 {
+    color: #183b56;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.para2 {
+    color: #5a7184;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+}
+
+.carding {
+    text-align: center;
+    background-color: white;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #e5eaf4;
+    border-radius: 16px;
+}
+
+.cardimage {
+    width: 87px;
+    height: 90px;
+}
+
+.chead {
+    color: #4b3232;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.cpara {
+    color: #ff0101;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 16px;
+}
+
+.bgcolor3 {
+    background-color: white;
+}
+
+.explorehead {
+    color: #183b56;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.explorecards {
+    border-radius: 16px;
+}
+
+.cardhead4 {
+    color: #183b56;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 24px;
+}
+
+.explorelink {
+    color: #c90202;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.payhead {
+    color: #183b56;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.paypara {
+    color: #183b56;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+}
+
+.paybutton {
+    background-color: #c90202;
+    color: white;
+    width: 130px;
+    height: 45px;
+    border: none;
+    border-radius: 8px;
+    margin-right: 10px;
+}
+
+.paycardimg {
+    width: 50px;
+    height: 50px;
+    margin-right: 28px;
+}
+
+.paymentimg {
+    width: 100%;
+}
+
+#contact {
+    background-color: grey;
+    padding-bottom: 4em;
+}
+
+.socialicons {
+    font-size: 40px;
+    cursor: pointer;
+}
+
+#icenter {
+    text-align: center;
+}
+
+.fa-brands {
+    color: white;
+}
+
+.fa-facebook,
+.fa-instagram,
+.fa-linkidin {
+    margin: 40px;
+}
+
+.fa-facebook:hover,
+.fa-instagram:hover,
+.fa-linkedin:hover {
+    color: #c90202;
+}
+
+.navbar {
+    background-color: rgb(255, 255, 255);
+    size: cover;
+    content: left;
+}
+
+body {
+    margin: 0;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.rate {
+    float: left;
+    height: 46px;
+    padding: 0 10px;
+}
+
+.rate:not(:checked)>input {
+    position: absolute;
+    top: -9999px;
+}
+
+.rate:not(:checked)>label {
+    float: right;
+    width: 1em;
+    overflow: hidden;
+    white-space: nowrap;
+    cursor: pointer;
+    font-size: 30px;
+    color: #ccc;
+}
+
+.rate:not(:checked)>label:before {
+    content: '★ ';
+}
+
+.rate>input:checked~label {
+    color: #ffc700;
+}
+
+.rate:not(:checked)>label:hover,
+.rate:not(:checked)>label:hover~label {
+    color: #deb217;
+}
+
+.rate>input:checked+label:hover,
+.rate>input:checked+label:hover~label,
+.rate>input:checked~label:hover,
+.rate>input:checked~label:hover~label,
+.rate>label:hover~input:checked~label {
+    color: #c59b08;
+}
+
+.abc {
+    margin-top: 20px;
+    margin-left: 400px;
+}
+
+.navbar-center {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.navbar-form.navbar-right {
+    display: flex;
+    justify-content: center;
+}
+
+.def {
+    background-color: #000000;
+
+}
+
+.navbar {
+    background-color: #fefefe;
+    background-image: url("");
+    justify-content: center;
+    display: flex;
+}
+
+.bgcolor {
+    background-color: #bd9de7;
+}
+
+/* Adjust the width of the search input field */
+.search-input {
+    background-color: #060606;
+    border: none;
+    color: rgb(255, 251, 251);
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 19px;
+    padding-left: 45px;
+    padding-right: 45px;
+    border-radius: 25px;
+    size: 0cqmax;
+    /* Adjust the width as per your preference */
+}
+
+.search-button {
+    background-color: #060606;
+    border: none;
+    color: rgb(255, 251, 251);
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 19px;
+    padding-left: 45px;
+    padding-right: 45px;
+    border-radius: 25px;
+    size: 0cqmax;
+
+}
+
+.qq {
+    margin-top: 15px;
+    color: #c90202;
+}
+
+
+
+/* Style inputs with type="text", select elements and textareas */
+input[type=text],
+select,
+textarea {
+    width: 100%;
+    /* Full width */
+    padding: 12px;
+    /* Some padding */
+    border: 1px solid #ccc;
+    /* Gray border */
+    border-radius: 4px;
+    /* Rounded borders */
+    box-sizing: border-box;
+    /* Make sure that padding and width stays in place */
+    margin-top: 6px;
+    /* Add a top margin */
+    margin-bottom: 16px;
+    /* Bottom margin */
+    resize: vertical
+        /* Allow the user to vertically resize the textarea (not horizontally) */
+}
+
+/* Style the submit button with a specific background color etc */
+input[type=submit] {
+    background-color: #ffffff;
+    color: rgb(11, 11, 11);
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* When moving the mouse over the submit button, add a darker green color */
+input[type=submit]:hover {
+    background-color: #000000;
+    color: rgb(253, 251, 251);
+}
+
+/* Add a background color and some padding around the form */
+.container {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+
+
+.button-52 {
+
+    background-color: #f4f4f4;
+    color: rgb(0, 0, 0);
+    padding: 4px 20px;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+
+}
+
+.button-522 {
+
+    background-color: #000000;
+    color: white;
+    padding: 4px 20px;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+
+
+}
+
+
+.form-select {
+
+    width: 25%;
+
+}
+
+.k {
+    text-align: right;
+}
+
+
+table,
+td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}

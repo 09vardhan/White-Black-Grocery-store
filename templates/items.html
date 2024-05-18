@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+    integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+  <link rel="stylesheet" href="/static/addcategory.css">
+</head>
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+{% for message in messages %}
+<center><b>{{ message }}</b></center>
+{% endfor %}
+{% endif %}
+{% endwith %}
+
+<body>
+
+  <div class="container">
+    <a href="{{url_for('admindash')}}"><button class="button-52">Back</button></a>
+
+    <div class="admin-product-form-container">
+      <form method="POST" enctype="multipart/form-data">
+
+        <h3>add a new product</h3>
+
+        <input type="text" placeholder="enter item name" name="name" class="box" required>
+        <input type="text" placeholder="enter item Discription" name="desc" class="box" required>
+        <input type="number" placeholder="enter item quantity" name="qty" class="box" required>
+        <label class="box">category</label>
+        <select name="category" class="box" required>
+          <option value="snacks">Snacks</option>
+          <option value="meat_and_seafood">Meat and Seafood</option>
+          <option value="bakery_products">Bakery Products</option>
+          <option value="beverages">Beverages</option>
+          <option value="fruits">fruits</option>
+          <option value="vegetables">vegetables</option>
+        </select>
+
+        <input type="number" placeholder="enter item price" name="price" class="box" required>
+        <input type="file" name="image" class="box" required>
+        <input type="submit" class="btn" name="add_product" value="add product" required>
+
+
+
+      </form>
+
+
+    </div>
+  </div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    #example1 {
+      background-image: url("static/background-magic-gycf.jpeg");
+      background-size: cover;
+      align-items: center;
+    }
+
+    .o {
+      background-color: rgb(254, 254, 254);
+      font-size: 50px;
+      margin-top: 1%;
+      font-family: "Times New Roman", Times, serif;
+      font-weight: bold;
+    }
+
+    .image {
+      width: 50%;
+    }
+
+
+    .overlay {
+      width: 100%;
+      height: 100%;
+      background-color: rgb(255, 255, 255);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+      margin-top: 40%;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      font-size: 19px;
+      padding-left: 45px;
+      padding-right: 45px;
+      border-radius: 25px;
+
+    }
+
+    .overlay h3 {
+      color: black;
+      letter-spacing: 1px;
+      font-size: 25px;
+      font-weight: 700;
+
+    }
+
+    .overlay p {
+      color: rgb(0, 0, 0);
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .button-52 {
+      background-color: #060606;
+      border: none;
+      color: rgb(255, 251, 251);
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      font-size: 19px;
+      padding-left: 45px;
+      padding-right: 45px;
+      border-radius: 25px;
+    }
+  </style>
+</head>
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+{% for message in messages %}
+<center><b style="color:rgb(20, 132, 229);">{{ message }}</b></center>
+{% endfor %}
+{% endif %}
+{% endwith %}
+
+<body id="example1">
+  <marquee class="o">Welcome to E-COMMERCE website Shop Online .........!</marquee>
+
+  <center>
+
+    <div class="container">
+      <div class="image">
+        <div class="overlay">
+          <h3>Get Started...!<br>With new Products</h3>
+          <p>Shop Now</p>
+          <a href="{{url_for('home')}}"><button class="button-52">Click To Explore...</button></a>
+        </div>
+      </div>
+    </div>
+  </center>
+</body>
+
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Ecommerce Website</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/static/home.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  <script src="https://kit.fontawesome.com/bbb01d58cc.js" crossorigin="anonymous"></script>
+
+</head>
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+{% for message in messages %}
+<center><b>{{ message }}</b></center>
+{% endfor %}
+{% endif %}
+{% endwith %}
+
+<body class="def">
+
+  <nav class="navbar">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#" id="go"><img src="static/large.png" class="stylinglogo" /></a>
+
+      </div>
+      <ul class="nav navbar-nav" id="go">
+
+        <li class=nav-link id="go"><a href="{{url_for('index')}}" id="go"><i class="fa-solid fa-house"></i>Home</a></li>
+        <li class=nav-link id="go"><a href="{{url_for('contactus')}}" id="go"><i
+              class="fa-sharp fa-solid fa-square-phone"></i>contactus</a></li>
+
+
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Category <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="{{ url_for('dashboard', category='snacks') }}">Snacks</a></li>
+            <li><a href="{{ url_for('dashboard', category='meat_and_seafood') }}">Meat and Seafood</a></li>
+            <li><a href="{{ url_for('dashboard', category='bakery_products') }}">Bakery Products</a></li>
+            <li><a href="{{ url_for('dashboard', category='beverages') }}">Beverages</a></li>
+            <li><a href="{{ url_for('dashboard', category='fruits') }}">Fruits</a></li>
+            <li><a href="{{ url_for('dashboard', category='vegetables') }}">vegetables</a></li>
+          </ul>
+        </li>
+
+
+
+
+
+        {% if session.get('user') %}
+        <li id="go"><a href="{{url_for('orders')}}" id="go"><i class="fa-solid fa-money-bill-trend-up"></i>Orders</a>
+        </li>
+        <li id="go"><a href="{{url_for('viewcart')}}" id="go"><i class="fa-sharp fa-solid fa-cart-shopping"></i>Cart</a>
+        </li>
+        <li id="go"><a href="{{url_for('logout')}}" id="go"><i class="fa-solid fa-arrow-left"></i>Logout</a></li>
+        {% else %}
+        <li id="go"><a href="{{url_for('usignup')}}" id="go"><i class="fa-solid fa-user-plus"></i>Signup</a></li>
+        <li id="go"><a href="{{url_for('login')}}" id="go"><i class="fa-solid fa-right-to-bracket"></i>Login</a></li>
+        <li id="go"><a href="{{url_for('admincreate')}}" id="go"><i class="fa-solid fa-user-plus"></i>seller Signup</a>
+        </li>
+        <li id="go"><a href="{{url_for('adminlogin')}}" id="go"><i class="fa-solid fa-right-to-bracket"></i>seller
+            Login</a>
+        </li>
+        {% endif %}
+        <li class="qq"><i class="fa-solid fa-user"></i>:{{session.get('user')}}</li>
+        <li class="abc">
+          <form method="POST" action="{{url_for('search')}}">
+            <input type="search" name="search" placeholder="Search...">
+            <button><i class="fa-solid fa-magnifying-glass"></i>Search</button>
+          </form>
+        </li>
+
+      </ul>
+
+    </div>
+  </nav>
+  </div>
+  {% block content %}
+  <div class="bgimg d-flex flex-column justify-content-end">
+    <div class="text-center mb-4">
+      <h1 class="head1">Shop with your Choice</h1>
+      <p class="paraline">Better & Faster</p>
+    </div>
+  </div>
+  <br>
+  <div class="container">
+    <div class="row">
+      {% for i in items %}
+
+      <div class="col-12 col-md-3"><br>
+        <div class="carding p=3">
+          <a href="{{url_for('dis',itemid=i[0])}}"><img src="{{url_for('static',filename=i[6])}}" height="100"
+              width="100" class="exploreimage w-100" /></a><br>
+          <label><b>Name:</b> {{i[1]}}</label><br>
+
+          <label><b>Available in Stock:</b>{{i[3]}}</label><br>
+          <select class="form-select" aria-label="Default select example" name="qty">
+            <option selected>1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+          </select> <br>
+
+          <label><b>Category:</b>{{i[4]}}</label><br>
+
+          <label><b>Price:</b>{{i[5]}}</label><br>
+          <a href="{{url_for('viewparticularitem',id1 = i[0])}}">view item</a>
+
+        </div>
+      </div>
+      {% endfor %}
+
+    </div>
+  </div>
+  </div>
+
+
+
+
+
+  {% endblock %}
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+    crossorigin="anonymous"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+{% extends 'home1.html' %}
+{% block content %}
+<br>
+<div class="container" >
+    <div class="row">
+       <center><label ><h1><b><u>Name:{{items[1]}}</u></b></h1></label><br></center> 
+        <div class="col-md-6">
+        <img src="{{url_for('static',filename=items[5])}}" height="550" width="550" /><br>
+        </div>
+            <div class="col-md-4">
+                <h3><b>Discription:</b></h3><p>{{items[2]}}</p>
+                <h3><b>Category:</b>{{items[3]}}</h3>
+                <h3><b>Price:</b>{{items[4]}}</h3><br>     
+                
+            </div>
+            <div class="col-md-2">
+                <button class="button-522" ><a href="{{url_for('cart',itemid=items[0],name=items[1],desc=items[2],category=items[3],price=items[4],imgid=items[5])}}">Add to cart</a></button><br><br>
+                {% if session.get('user') %}
+                <a href="{{url_for('wreview',itemid=items[0])}}"><button class="button-52" >Add Review</button></a><br><br>
+                <a href="{{url_for('rreview',itemid=items[0])}}"><button class="button-52" >Read Reviews</button></a><br><br>
+                {% else %}
+                <a href="{{url_for('rreview',itemid=items[0])}}"><button class="button-52" >Read Reviews</button></a>
+                {% endif %}<br><br>
+                <a href="{{url_for('allitems')}}"><button class="button-52" >Back</button></a>
+            </div>
+    </div>
+</div>
+{% endblock %}
+
+

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add note</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fffafa;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            margin: 20px auto;
+            padding: 20px;
+            max-width: 800px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            border: 1px solid #ddd;
+            color: rgb(0, 0, 0);
+
+        }
+
+        th,
+        td {
+            padding: 8px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+
+        .button-52 {
+            background-color: #030303;
+            color: white;
+            padding: 4px 20px;
+            border: none;
+            border-radius: 2px;
+            cursor: pointer;
+        }
+
+
+        h1 {
+            text-align: center;
+        }
+
+        @media screen and (max-width: 600px) {
+            table {
+                border: none;
+            }
+
+            table thead {
+                display: none;
+            }
+
+            table tbody tr {
+                display: block;
+                margin-bottom: 20px;
+                border: 1px solid #ddd;
+            }
+
+            table tbody td {
+                display: block;
+                text-align: center;
+            }
+
+            table tbody td:first-child {
+                font-weight: bold;
+            }
+
+            .button-container {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="button-container">
+        <a href="{{url_for('admindash')}}" class="button-52">Back</a>
+    </div>
+    <h1>Products Status</h1>
+    <div class="container">
+        <div class="table-container">
+            <b>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Item ID</th>
+                            <th>Name</th>
+                            <th>Description</th>
+                            <th>Quantity</th>
+                            <th>Category</th>
+                            <th>Price</th>
+                            <th>Update</th>
+                            <th>Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for i in items %}
+                        <tr>
+                            <td>{{i[0]}}</td>
+                            <td>{{i[1]}}</td>
+                            <td>{{i[2]}}</td>
+                            <td>{{i[3]}}</td>
+                            <td>{{i[4]}}</td>
+                            <td>{{i[5]}}</td>
+                            <td><a href="{{url_for('update',itemid=i[0])}}">Update</a></td>
+                            <td><a href="{{url_for('delete',itemid=i[0])}}">Delete</a></td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </b>
+        </div>
+    </div>
+</body>
+
+</html>

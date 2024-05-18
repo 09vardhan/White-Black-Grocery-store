@@ -1,0 +1,27 @@
+
+{% extends 'home1.html' %}
+{% block content %}
+<a href="{{url_for('home')}}"><button class="button-52">Go to home</button></a>
+<center><h1>Contact Us</h1></center>
+<div class="container">
+<form method="POST">
+    
+    <label>Name:</label>
+    <input type="text"  name="name" placeholder="Your name.." required>
+
+    <label >Email:</label>
+    <input type="text"  name="emailid" placeholder="Your email.." required>
+
+  
+
+    <label >Message</label>
+    <textarea  name="msg" placeholder="Write something.." style="height:200px" required></textarea>
+
+    <a href="{{url_for('contactus')}}"><input type="submit" value="Submit"></a>
+
+  </form>
+  
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: 'Poppins', sans-serif;
+  height: 100vh;
+  width: 70vw;
+  background-image:url('https://t4.ftcdn.net/jpg/03/09/86/97/360_F_309869755_IquCHHxF7YABo2odctUGEjMrgVDSM8qV.jpg');
+  background-size: cover;
+  background-position: center;
+  
+
+  display:flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.card{
+  background: #fff;
+  width: 900px;
+  min-height: 400px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  display: flex;
+
+
+}
+
+.form,
+.image{
+  width: 50%;
+}
+
+.image{
+background-image: url('https://wallpaperaccess.com/full/2483954.jpg');
+background-size:cover;
+background-position: center;
+}
+
+.overlay{
+  width: 100%;
+  height: 100%;
+  background-color: rgba(192, 6, 243, 0.31);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  
+}
+
+.overlay h3{
+  color:rgb(1, 1, 3);
+  letter-spacing: 1px;
+  font-size: 25px;
+  font-weight: 700;
+  opacity: 0.6;
+}
+.overlay p{
+  color:rgb(0, 0, 0);
+  font-size: 20px;
+  font-weight: bold;
+}
+
+
+.form{
+  padding: 60px 25px; 
+  display: flex;
+  flex-direction: column;
+}
+.form h3{
+  font-size: 28px;
+  font-weight: 500;
+  position: relative;
+  margin-bottom: 30px;
+}
+.form h3::after{
+  content: '';
+  width:30px;
+  height:3px;
+  background: #7227D5;
+  position: absolute;
+  left: 0;
+  bottom: 2px;
+  border-radius: 5px;
+}
+
+.fa{
+  color: #7227D5;
+  position: absolute;
+  top:10px;
+  font-size: 18px;
+}
+
+.input-field{
+  width: 100%;
+  margin-bottom: 10px;
+  position: relative;
+}
+.input-field input{
+  display: block; 
+  width: 100%;
+  padding: 10px 30px;
+  outline: none;
+  border:none;
+  border-bottom: 2px solid rgb(182, 180, 180);
+  font-size: 15px;
+}
+
+.form>a{
+  color:#2798d5;
+  text-decoration: none;
+  font-size: 14px;
+  margin-bottom: 35px
+}
+
+button{
+  height: 45px;
+  background:#7227D5;
+  border:none;
+  color:white;
+  border-radius: 5px;
+  font-size: 18px;
+}
+
+button+p{
+  text-align: center;
+  padding-top: 30px;
+  font-size: 14px;
+}
+
+button+p a{
+  text-decoration: none;
+  color:#7227D5;
+  font-weight: 500;
+}
+
+input::placeholder {
+  font-family: 'Poppins', sans-serif;
+}

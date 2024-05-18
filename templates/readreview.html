@@ -1,0 +1,32 @@
+{% extends 'home1.html' %}
+{% block content %}
+<a href="{{url_for('home')}}"><button class="button-52">Go to home</button></a>
+<center><h1>Customer Reviews:</h1></center>
+<div class="container">
+  <div class="row">
+        {% for i in reviews %} 
+        <div class="col-12 col-md-3" ><br>
+          <div class="carding p=3">
+        <label> Customer name:{{i[1]}}</label><br>
+        
+        <label> Review Title:{{i[2]}}</label><br>
+        <label>Discription:{{i[3]}}</label><br>
+        <label > Rating:{{i[4]}}</label><br>  
+        <label>Date:{{i[5]}}</label><br>
+          </div>
+          </div>
+
+        {% endfor %}   
+   </div>
+   
+
+  </div>    
+{% endblock %}
+
+
+
+
+
+
+    
+

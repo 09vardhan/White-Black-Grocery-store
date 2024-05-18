@@ -1,0 +1,72 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<div>
+{% for i in contact %} 
+<label> name:{{i[0]}}</label><br>
+<label>email:{{i[1]}}</label><br>
+        
+<label > message:{{i[2]}}</label><br>  
+{% endfor %}   
+</div>
+        
+        
+    
+    
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add note</title>
+    <style>
+        .button-52 {
+
+            background-color: #070807;
+            color: white;
+            padding: 4px 20px;
+            border: none;
+            border-radius: 2px;
+            cursor: pointer;
+
+        }
+    </style>
+
+<body>
+    <a href="{{url_for('admindash')}}"><button class="button-52">Back</button></a>
+    <center>
+        <h1>Queries:</h1>
+    </center>
+    <div class="container">
+        <div class="row">
+            {% for i in contact %}
+            <div class="col-12 col-md-3"><br>
+                <div class="carding p=3">
+                    <h1 align="center"> <label><b>Customer Name:</b> {{i[0]}}</label><br>
+                        <label><b>Customer Email:</b> {{i[1]}}</label><br>
+                        <label><b>Message:</b> {{i[2]}}</label><br>
+                    </h1>
+
+
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+</body>
+
+</html>

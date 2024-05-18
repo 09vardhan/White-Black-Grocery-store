@@ -1,0 +1,41 @@
+{% extends 'home1.html' %}
+{% block content %}
+<a href="{{url_for('home')}}"><button class="button-52">Go to home</button></a>
+      <div class="container">
+        <div class="row">
+      {% for i in items %} 
+        <form method="POST" action="{{url_for('pay',itemid=i[0],name=i[1],price=i[5])}}">    
+          <div class="col-12 col-md-3" ><br>
+            <div class="carding p=3">
+              <a href="{{url_for('dis',itemid=i[0])}}"><img src="{{url_for('static',filename=i[6])}}" height="100" width="100" class="exploreimage w-100"/></a><br>
+              <label><b>Name:</b> {{i[1]}}</label><br>
+              
+              <label ><b>Available in Stock:</b>{{i[3]}}</label><br>
+              <select class="form-select" aria-label="Default select example" name="qty">
+              <option selected>1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+              </select> <br>
+
+              <label ><b>Category:</b>{{i[4]}}</label><br>
+
+              <label ><b>Price:</b>{{i[5]}}</label><br>
+                          
+              <button class="button-522" ><a href="{{url_for('cart',itemid=i[0],name=i[1],desc=i[2],category=i[4],price=i[5],imgid=i[6])}}">Add to cart</a></button>    
+              <button class="button-52" >Buy Now</button></a>
+            </div>
+          </div>
+        </form> 
+      {% endfor %}
+
+    </div>
+  </div>
+</div> 
+{% endblock %}

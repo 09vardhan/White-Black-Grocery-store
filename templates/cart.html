@@ -1,0 +1,46 @@
+{% extends 'home1.html' %}
+{% block content %}
+<a href="{{url_for('home')}}"><button class="button-52">Go to home</button></a>
+<div class="container">
+    <div class="row">
+        {%if items!='empty' %}
+        {% for i in items %}
+        {{i}}
+        <form method="POST" action="{{url_for('pay',itemid=i,name=items[i][0],price=items[i][3])}}">
+            <div class="col-12 col-md-3"><br>
+                <div class="carding p=3">
+                    <img src="{{url_for('static',filename=items[i][4])}}" height="100" width="100" />
+                    <br>
+                    <b>Quantity</b>
+                    <p class="quantity mt-1">
+                        <select class="form-select" aria-label="Default select example" name="qty">
+                            <option selected>1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                        </select>
+                    </p>
+                    <div class="d-flex flex-row">
+                        <h6>Price <i class="fa fa-inr" aria-hidden="true">{{items[i][3]}} </i></h6>
+                    </div>
+                    <div class="d-flex flex-row">
+                        <button class="button-52" type="submit">Buy Now</button>&nbsp;&nbsp;
+                        <a class="button-522" href="{{url_for('rem',item=i)}}">delete</a>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+        {% endfor %}
+        {% endif %}
+
+    </div>
+</div>
+
+{% endblock %}
